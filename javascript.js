@@ -12,7 +12,7 @@ const cellSize = cellHeight;
 const cellCount = 10;
 // 当前选中的子元素索引 
 let selectedIndex = 0;
-document.body.style.backgroundImage = 'url(' + "./img/1.jpg" + ')';
+document.body.style.backgroundImage = 'url(' + "./1.jpg" + ')';
 // 计算半径 
 const radius = Math.round((cellSize / 1.8) / Math.tan(Math.PI / cellCount));
 // 计算每个子元素的角度 
@@ -21,7 +21,7 @@ function rotateshell() {
   // 计算旋转角度 
   const angle = theta * selectedIndex * -1;
   // 设置容器的旋转和平移效果 
-  shell.style.transform = 'translateZ(' + -radius + 'px) ' + 'rotateX(' + -angle + 'deg)' + 'rotateY(' + -angle + 'deg)';
+  shell.style.transform = 'translateZ(' + -radius + 'px) ' + 'rotateX(' + -angle + 'deg)';
   // 计算当前选中的子元素索引 
   const cellIndex = selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) : (selectedIndex % cellCount);
   cells.forEach((cell, index) => {
@@ -38,9 +38,9 @@ function selectPrev() {
   // 选中上一个子元素 
   selectedIndex--;
   if ((selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) == 7 || (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) == 8) {
-    document.body.style.backgroundImage = 'url(' + "./img/" + (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) + ".gif" + ')';
+    document.body.style.backgroundImage = 'url(' + "./" + (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) + ".gif" + ')';
   }
-  else document.body.style.backgroundImage = 'url(' + "./img/" + (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) + ".jpg" + ')';
+  else document.body.style.backgroundImage = 'url(' + "./" + (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) + ".jpg" + ')';
   // 旋转容器 
   rotateshell();
 
@@ -49,9 +49,9 @@ function selectNext() {
   // 选中下一个子元素 
   selectedIndex++;
   if ((selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) == 7 || (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) == 8) {
-    document.body.style.backgroundImage = 'url(' + "./img/" + (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) + ".gif" + ')';
+    document.body.style.backgroundImage = 'url(' + "./" + (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) + ".gif" + ')';
   }
-  else document.body.style.backgroundImage = 'url(' + "./img/" + (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) + ".jpg" + ')';
+  else document.body.style.backgroundImage = 'url(' + "./" + (selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) + 1 : (selectedIndex % cellCount) + 1) + ".jpg" + ')';
   // 旋转容器 
   rotateshell();
 }
